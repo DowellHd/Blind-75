@@ -46,7 +46,7 @@ Work through the categories **in order**. Each builds on patterns from the previ
 ## Progress Tracker
 
 ### 01 - Arrays & Hashing (8 problems)
-- [ ] Two Sum (#1) - Easy
+- [x] Two Sum (#1) - Easy
 - [ ] Contains Duplicate (#217) - Easy
 - [ ] Valid Anagram (#242) - Easy
 - [ ] Group Anagrams (#49) - Medium

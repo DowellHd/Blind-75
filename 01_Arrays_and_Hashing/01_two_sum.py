@@ -29,4 +29,11 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # Hint: Use a hash map to store each number's index as you iterate.
         # For each number, check if (target - number) already exists in the map.
+        Seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num # Calculate the complement that we need to find
+            if complement in nums:
+                return [nums.index(complement), i] # Return the indices of the complement and the current number
+            Seen[num] = i # Store the index of the current number in the hash map
+        
         pass
