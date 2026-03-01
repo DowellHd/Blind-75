@@ -26,4 +26,11 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # Hint: Use sorted(word) as the key in a hash map. All anagrams
         # produce the same sorted string, so they group into the same bucket.
-        pass
+            anagram_groups = defaultdict(list)
+            for word in strs:
+                # Sort the characters in the word to get the anagram key
+                sorted_word = ''.join(sorted(word))
+                # Append the original word to the list corresponding to the sorted key
+                anagram_groups[sorted_word].append(word)
+                
+            return list(anagram_groups.values())
