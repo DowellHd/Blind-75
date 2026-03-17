@@ -23,24 +23,19 @@ from typing import List
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        # Hint: Use sorted(word) as the key in a hash map. All anagrams
-        # produce the same sorted string, so they group into the same bucket.
-            anagram_groups = defaultdict(list)
-            
-            for str in strs:
-                count = [0] * 26  # Count of each character (a-z)
-                for char in str:
-                    count[ord(char) - ord('a')] += 1 # Increment count for this character
-                anagram_groups[tuple(count)].append(str) # Use the count tuple as the key
-            return list(anagram_groups.values())
-            
-            # for str in strs:
-            #     # Sort the characters in the word to get the anagram key
-            #     sorted_word = ''.join(sorted(word))
-            #     # Append the original word to the list corresponding to the sorted key
-            #     anagram_groups[sorted_word].append(word)
+        # Approach: character count fingerprint
+        # Each word is represented as a tuple of 26 counts (one per letter a-z).
+        # Anagrams produce identical tuples, so they map to the same bucket.
+        # Time: O(n * k)  |  Space: O(n * k)  — where n = # words, k = max word length
+        anagram_groups = defaultdict(list) # mapping charCount to List of Anagrams
 
-            # return list(anagram_groups.values())
+        for word in strs:
+            charcount = [0] * 26  # frequency table for each letter a-z
+            for char in word:
+                charcount[ord(char) - ord('a')] += 1  # map 'a'->0, 'b'->1, ..., 'z'->25
+            anagram_groups[tuple(charcount)].append(word)  # group words with the same fingerprint
+
+        return list(anagram_groups.values())
 
 
 if __name__ == "__main__":

@@ -25,13 +25,13 @@ class Solution:
         # Two dictionaries to track how many times each character appears
         character_count_s = {}
         character_count_t = {}
-
-        for char in s:
-            # .get(char, 0) looks up `char` in the dict.
+ 
+ # .get(char, 0) looks up `char` in the dict.
             # If `char` exists, it returns its current count.
             # If `char` is NOT in the dict yet, it returns the default value 0
             # instead of raising a KeyError.
             # We then add 1 and store the result back, incrementing the count.
+        for char in s:          
             character_count_s[char] = character_count_s.get(char, 0) + 1
 
         for char in t:
