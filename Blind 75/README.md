@@ -50,7 +50,7 @@ Work through the categories **in order**. Each builds on patterns from the previ
 - [x] Contains Duplicate (#217) - Easy
 - [x] Valid Anagram (#242) - Easy
 - [x] Group Anagrams (#49) - Medium
-- [ ] Top K Frequent Elements (#347) - Medium
+- [x] Top K Frequent Elements (#347) - Medium
 - [ ] Product of Array Except Self (#238) - Medium
 - [ ] Encode and Decode Strings (#271) - Medium
 - [ ] Longest Consecutive Sequence (#128) - Medium
